@@ -24,12 +24,13 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center space-x-2">
               <img
-                className="h-8 w-auto"
-                src="/assets/img/arrayindex-logo.png"
-                alt="ArrayIndex"
+                className="h-10 w-auto object-contain"
+                src="/img/logo.png"
+                alt="arrayindex"
               />
+              <span className="text-white text-xl font-bold">arrayindex</span>
             </Link>
           </div>
 
