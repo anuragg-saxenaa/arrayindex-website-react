@@ -1,0 +1,626 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-color: #3B82F6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-black text-white font-sans antialiased;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .navbar {
+    @apply fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-sm;
+  }
+
+  .navbar--logo {
+    @apply float-left p-4;
+  }
+
+  .navbar--logo img {
+    @apply h-8 w-auto;
+  }
+
+  .navbar--menu {
+    @apply float-right p-4 flex space-x-8;
+  }
+
+  .navbar--menu li a {
+    @apply text-white hover:text-primary-color transition-colors;
+  }
+
+  .btn {
+    @apply inline-block px-6 py-2 rounded-full font-medium transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary-color text-white hover:bg-primary-color/90;
+  }
+
+  .section {
+    @apply min-h-screen flex items-center justify-center relative;
+  }
+
+  .section-content {
+    @apply container mx-auto px-4;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-6xl font-bold mb-8;
+  }
+
+  .section-subtitle {
+    @apply text-xl md:text-2xl text-gray-400 mb-12;
+  }
+
+  .card {
+    @apply bg-white/5 backdrop-blur-sm rounded-lg p-6 hover:bg-white/10 transition-colors;
+  }
+
+  .card-title {
+    @apply text-xl font-bold mb-4;
+  }
+
+  .card-text {
+    @apply text-gray-400;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+
+  .animate-fade-in-delay {
+    animation: fade-in 1s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fade-in 1s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-53%) translateX(-10px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+  background-color: #0c0c0c;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+.app-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0c0c0c;
+  overflow-x: hidden;
+}
+
+.app-wrapper.transitioning {
+  opacity: 0.5;
+}
+
+.side-nav {
+  position: fixed;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  width: 120px;
+}
+
+.side-nav > li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 20px;
+  list-style: none;
+  color: #555;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.side-nav > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 20px;
+  background-color: #555;
+  transition: all 0.3s ease;
+}
+
+.side-nav > li span {
+  margin-left: 20px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.side-nav li.is-active {
+  color: #0f33ff;
+}
+
+.side-nav li.is-active::before {
+  background-color: #0f33ff;
+  height: 40px;
+}
+
+.side-nav li.is-active span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.side-nav li:hover {
+  color: #0f33ff;
+}
+
+.side-nav li:hover::before {
+  background-color: #0f33ff;
+}
+
+.side-nav li:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 30px;
+  }
+
+  .side-nav > li {
+    margin: 0 10px;
+    padding: 5px 10px;
+    width: auto;
+    font-size: 12px;
+  }
+
+  .side-nav > li::before {
+    display: none;
+  }
+
+  .side-nav > li span {
+    opacity: 1;
+    transform: none;
+    margin-left: 0;
+  }
+
+  .side-nav li.is-active {
+    color: #0f33ff;
+  }
+
+  .side-nav li:hover {
+    color: #0f33ff;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-53%) translateX(-10px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 1s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar--menu {
+    @apply hidden;
+  }
+
+  .section-title {
+    @apply text-3xl;
+  }
+
+  .section-subtitle {
+    @apply text-lg;
+  }
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/css/fonts/Montserrat-Black.eot');
+  src: local('☺'),
+       url('/assets/css/fonts/Montserrat-Black.woff') format('woff'),
+       url('/assets/css/fonts/Montserrat-Black.ttf') format('truetype'),
+       url('/assets/css/fonts/Montserrat-Black.svg') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/css/fonts/Montserrat-Bold.eot');
+  src: local('☺'),
+       url('/assets/css/fonts/Montserrat-Bold.woff') format('woff'),
+       url('/assets/css/fonts/Montserrat-Bold.ttf') format('truetype'),
+       url('/assets/css/fonts/Montserrat-Bold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/css/fonts/Montserrat-Regular.eot');
+  src: local('☺'),
+       url('/assets/css/fonts/Montserrat-Regular.woff') format('woff'),
+       url('/assets/css/fonts/Montserrat-Regular.ttf') format('truetype'),
+       url('/assets/css/fonts/Montserrat-Regular.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/css/fonts/Montserrat-Light.eot');
+  src: local('☺'),
+       url('/assets/css/fonts/Montserrat-Light.woff') format('woff'),
+       url('/assets/css/fonts/Montserrat-Light.ttf') format('truetype'),
+       url('/assets/css/fonts/Montserrat-Light.svg') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Base styles */
+:root {
+  --primary-color: #00ff9d;
+  --secondary-color: #6c757d;
+  --background-color: #0a0a0a;
+  --text-color: #ffffff;
+  --card-background: #1a1a1a;
+  --hover-color: #00cc7d;
+  --accent-color: #ff3366;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* App wrapper */
+.app-wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding-left: 120px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+/* Side navigation */
+.side-nav {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.side-nav li {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.side-nav li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: var(--primary-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.side-nav li:hover::before,
+.side-nav li.is-active::before {
+  opacity: 1;
+}
+
+.side-nav li span {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.side-nav li:hover span,
+.side-nav li.is-active span {
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+/* Sections */
+.section {
+  min-height: 100vh;
+  padding: 6rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(0, 255, 157, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.section.is-active {
+  opacity: 1;
+}
+
+.section.is-active::before {
+  opacity: 1;
+}
+
+.section-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+  margin-bottom: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-background);
+  padding: 2.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 157, 0.1), rgba(255, 51, 102, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 255, 157, 0.1);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.card-text {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-wrapper {
+    padding-left: 0;
+  }
+
+  .side-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: auto;
+    transform: none;
+    width: 100%;
+    background-color: var(--card-background);
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: none;
+  }
+
+  .side-nav li {
+    padding: 0.5rem 1rem;
+    margin: 0;
+    font-size: 0.7rem;
+  }
+
+  .side-nav li::before {
+    display: none;
+  }
+
+  .section {
+    padding: 4rem 2rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+}
+
+/* Font face declarations */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/css/fonts/Montserrat-Black.eot');
+  src: url('/assets/css/fonts/Montserrat-Black.eot?#iefix') format('embedded-opentype'),
+       url('/assets/css/fonts/Montserrat-Black.woff2') format('woff2'),
+       url('/assets/css/fonts/Montserrat-Black.woff') format('woff'),
+       url('/assets/css/fonts/Montserrat-Black.ttf') format('truetype'),
+       url('/assets/css/fonts/Montserrat-Black.svg#Montserrat-Black') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/css/fonts/Montserrat-Bold.eot');
+  src: url('/assets/css/fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+       url('/assets/css/fonts/Montserrat-Bold.woff2') format('woff2'),
+       url('/assets/css/fonts/Montserrat-Bold.woff') format('woff'),
+       url('/assets/css/fonts/Montserrat-Bold.ttf') format('truetype'),
+       url('/assets/css/fonts/Montserrat-Bold.svg#Montserrat-Bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/css/fonts/Montserrat-Regular.eot');
+  src: url('/assets/css/fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/assets/css/fonts/Montserrat-Regular.woff2') format('woff2'),
+       url('/assets/css/fonts/Montserrat-Regular.woff') format('woff'),
+       url('/assets/css/fonts/Montserrat-Regular.ttf') format('truetype'),
+       url('/assets/css/fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/assets/css/fonts/Montserrat-Light.eot');
+  src: url('/assets/css/fonts/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+       url('/assets/css/fonts/Montserrat-Light.woff2') format('woff2'),
+       url('/assets/css/fonts/Montserrat-Light.woff') format('woff'),
+       url('/assets/css/fonts/Montserrat-Light.ttf') format('truetype'),
+       url('/assets/css/fonts/Montserrat-Light.svg#Montserrat-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+} 
