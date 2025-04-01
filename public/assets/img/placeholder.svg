@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#1a1a1a"/>
+  
+  <!-- Stars -->
+  <circle cx="100" cy="100" r="2" fill="#ffffff"/>
+  <circle cx="200" cy="150" r="1" fill="#ffffff"/>
+  <circle cx="300" cy="80" r="2" fill="#ffffff"/>
+  <circle cx="400" cy="200" r="1" fill="#ffffff"/>
+  <circle cx="500" cy="120" r="2" fill="#ffffff"/>
+  <circle cx="600" cy="180" r="1" fill="#ffffff"/>
+  <circle cx="700" cy="90" r="2" fill="#ffffff"/>
+  
+  <!-- Cloud -->
+  <path d="M200 300 C 200 250, 250 250, 250 300 C 250 350, 300 350, 300 300 C 300 250, 350 250, 350 300 C 350 350, 400 350, 400 300 C 400 250, 450 250, 450 300 C 450 350, 500 350, 500 300 C 500 250, 550 250, 550 300 C 550 350, 600 350, 600 300 C 600 250, 650 250, 650 300 C 650 350, 700 350, 700 300 C 700 250, 750 250, 750 300 C 750 350, 800 350, 800 300 L 800 400 L 200 400 Z" fill="#2a2a2a"/>
+  
+  <!-- Tech Icons -->
+  <path d="M300 400 L 400 500 M 400 400 L 500 500" stroke="#3B82F6" stroke-width="2"/>
+  <circle cx="450" cy="450" r="30" stroke="#3B82F6" stroke-width="2" fill="none"/>
+</svg> 
