@@ -1,43 +1,33 @@
-# ArrayIndex Website
+# Array Index Website
 
-A modern, responsive website for ArrayIndex, built with React, TypeScript, and Tailwind CSS. The website showcases ArrayIndex's services, works, and provides a platform for client interaction.
+A modern, responsive website built with React and TypeScript, featuring a sleek design and interactive components.
 
-## 🌟 Features
+## Features
 
-- **Modern Design**
-  - Clean, minimalist interface
-  - Dark theme with glassmorphism effects
-  - Smooth animations and transitions
-  - Fully responsive layout
+- 🎨 Modern UI with glass-morphism effects
+- 🌙 Dark mode optimized
+- 📱 Fully responsive design
+- 🚀 Interactive sections with smooth scrolling
+- 💬 AI-powered chatbot for programming assistance
+- 🛠️ Development tools (JSON Formatter, YAML Formatter, Calculator, Base64 Converter)
+- 📧 Contact form with EmailJS integration
+- 🔗 Social media integration (LinkedIn, WhatsApp, Facebook, GitHub)
+- 🎯 Section-based navigation
+- ⚡ Performance optimized
 
-- **Pages**
-  - Home: Showcases main services and company overview
-  - About: Company history and philosophy
-  - Services: Detailed service offerings
-  - Works: Portfolio of completed projects
-  - Contact: Client contact form and information
-  - Login/Signup: User authentication system
+## Tech Stack
 
-- **Technical Features**
-  - React 18 with TypeScript
-  - Tailwind CSS for styling
-  - React Router for navigation
-  - Heroicons for icons
-  - Vite for fast development and building
+- React
+- TypeScript
+- Tailwind CSS
+- EmailJS
+- Vite
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-
-### Installation
+## Getting Started
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/arrayindex-website.git
-cd arrayindex-website
+git clone https://github.com/yourusername/arrayindex-website-react.git
 ```
 
 2. Install dependencies:
@@ -50,80 +40,46 @@ npm install
 npm run dev
 ```
 
-4. Open your browser and navigate to:
-```
-http://localhost:3000
-```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🛠️ Built With
-
-- [React](https://reactjs.org/) - Frontend framework
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [Tailwind CSS](https://tailwindcss.com/) - Styling
-- [React Router](https://reactrouter.com/) - Navigation
-- [Heroicons](https://heroicons.com/) - Icons
-- [Vite](https://vitejs.dev/) - Build tool
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-arrayindex-website/
-├── src/
-│   ├── components/     # Reusable components
-│   ├── pages/         # Page components
-│   ├── assets/        # Static assets
-│   ├── App.tsx        # Main application component
-│   └── main.tsx       # Application entry point
-├── public/            # Public assets
-├── index.html         # HTML template
-└── package.json       # Project dependencies
+src/
+├── components/     # Reusable components
+├── pages/         # Page components
+├── assets/        # Static assets
+├── styles/        # Global styles
+└── utils/         # Utility functions
 ```
 
-## 🎨 Design System
+## Features in Detail
 
-- **Colors**
-  - Primary: Custom primary color
-  - Background: Black
-  - Text: White/Gray variations
-  - Accents: Gradient effects
+### Interactive Sections
+- Hero section with animated elements
+- Services showcase with hover effects
+- Portfolio gallery with image loading states
+- About section with company information
+- Development tools section
+- Contact form with real-time validation
 
-- **Typography**
-  - Font Family: System fonts
-  - Headings: Bold with gradient effects
-  - Body: Clean and readable
+### Development Tools
+- JSON Formatter: Format and validate JSON data
+- YAML Formatter: Format and validate YAML data
+- Calculator: Evaluate mathematical expressions
+- Base64 Converter: Encode and decode Base64 strings
 
-- **Components**
-  - Glassmorphism cards
-  - Gradient buttons
-  - Animated transitions
-  - Responsive navigation
+### Coming Soon
+- Regex Tester
+- Color Picker
+- Hash Generator
 
-## 🔒 Security
+### Contact Information
+- Headquarters: 3191 Sorrento Crescent, Burlington, ON L7M 0N2, Canada
+- Phone: +1 (555) 123-4567
+- Email: contact@arrayindex.com
 
-- Secure authentication system
-- Protected routes
-- Form validation
-- Secure password handling
-
-## 📱 Responsive Design
-
-The website is fully responsive and optimized for:
-- Desktop (1024px and above)
-- Tablet (768px to 1023px)
-- Mobile (below 768px)
-
-## 🚀 Deployment
-
-The website can be deployed to any static hosting service:
-
-1. Build the project:
-```bash
-npm run build
-```
-
-2. Deploy the contents of the `dist` folder to your hosting service.
-
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -131,16 +87,13 @@ npm run build
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Authors
+## Acknowledgments
 
-- ArrayIndex Team
-
-## 🙏 Acknowledgments
-
-- React Team
-- Tailwind CSS Team
-- All contributors and supporters 
+- Design inspiration from modern web trends
+- Icons from Heroicons
+- Animations using CSS keyframes
+- Glass-morphism effects using Tailwind CSS 
