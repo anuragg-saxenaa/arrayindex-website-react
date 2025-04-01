@@ -420,8 +420,25 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
-              <Link to="/" className="text-2xl font-bold text-white font-mono">
-                arrayindex
+              <Link to="/" className="flex items-center space-x-2">
+                <div className="relative h-8 w-8">
+                  <img
+                    src="/assets/img/logo.png"
+                    alt="arrayindex"
+                    className="h-8 w-auto object-contain"
+                    style={{ 
+                      filter: 'brightness(1) contrast(1) saturate(1)',
+                      mixBlendMode: 'normal',
+                      opacity: 1,
+                      backgroundColor: 'transparent'
+                    }}
+                    onError={(e) => {
+                      console.error('Error loading logo:', e);
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                </div>
+                <span className="text-2xl font-bold text-white font-mono">arrayindex</span>
               </Link>
             </div>
             <div className="hidden md:block">
