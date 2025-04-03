@@ -14,4 +14,8 @@ services:
     disk:
       name: data
       mountPath: /app/data
-      sizeGB: 1 
+      sizeGB: 1
+    buildCommand: docker build -t arrayindex-website .
+    startCommand: docker run -p 3000:3000 arrayindex-website
+    autoDeploy: true
+    branch: master 
