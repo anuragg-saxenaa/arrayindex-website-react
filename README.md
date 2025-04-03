@@ -1,56 +1,106 @@
-# Array Index Website
+# ArrayIndex Website
 
-A modern, responsive website built with React and TypeScript, featuring a sleek design and interactive components.
+A modern, responsive website for ArrayIndex built with React, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- 🎨 Modern UI with glass-morphism effects
-- 🌙 Dark mode optimized
+- 🎨 Modern UI with Tailwind CSS
 - 📱 Fully responsive design
-- 🚀 Interactive sections with smooth scrolling
-- 💬 AI-powered chatbot for programming assistance
-- 🛠️ Development tools (JSON Formatter, YAML Formatter, Calculator, Base64 Converter)
-- 📧 Contact form with EmailJS integration
-- 🔗 Social media integration (LinkedIn, WhatsApp, Facebook, GitHub)
-- 🎯 Section-based navigation
-- ⚡ Performance optimized
+- ⚡ Fast performance with Vite
+- 🔒 Type-safe with TypeScript
+- 🎭 Smooth animations with Framer Motion
+- 📧 Contact form integration
+- 🗺️ Interactive map integration
+- 🎯 SEO optimized
 
 ## Tech Stack
 
-- React
+- React 18
 - TypeScript
 - Tailwind CSS
-- EmailJS
 - Vite
+- Framer Motion
+- React Router
+- EmailJS
+- Express (for production)
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js 18 or higher
+- npm or yarn
+- Docker (optional, for containerized deployment)
+
+### Local Development
+
 1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/arrayindex-website-react.git
-```
+   ```bash
+   git clone https://github.com/anuragg-saxenaa/arrayindex-website-react.git
+   cd arrayindex-website-react
+   ```
 
 2. Install dependencies:
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
 3. Start the development server:
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Docker Development
+
+1. Build the Docker image:
+   ```bash
+   docker build -t arrayindex-website .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -p 3000:3000 arrayindex-website
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deployment
+
+### Docker Deployment on Render
+
+1. Push your code to GitHub
+2. Create a new Web Service on Render
+3. Connect your GitHub repository
+4. Select "Docker" as the environment
+5. Render will automatically detect the `Dockerfile` and `render.yaml`
+
+The application is configured to run in a Docker container with:
+- Multi-stage build for optimized image size
+- Production-ready Express server
+- Static file serving
+- Proper error handling
+- Health checks
 
 ## Project Structure
 
 ```
-src/
-├── components/     # Reusable components
-├── pages/         # Page components
-├── assets/        # Static assets
-├── styles/        # Global styles
-└── utils/         # Utility functions
+arrayindex-website-react/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/         # Page components
+│   ├── services/      # API and service integrations
+│   ├── styles/        # Global styles and Tailwind config
+│   ├── App.tsx        # Main application component
+│   └── main.tsx       # Application entry point
+├── public/            # Static assets
+├── index.html         # HTML template
+├── package.json       # Dependencies and scripts
+├── tsconfig.json      # TypeScript configuration
+├── vite.config.ts     # Vite configuration
+├── Dockerfile         # Docker configuration
+└── render.yaml        # Render deployment configuration
 ```
 
 ## Features in Detail
@@ -82,9 +132,9 @@ src/
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
 ## License

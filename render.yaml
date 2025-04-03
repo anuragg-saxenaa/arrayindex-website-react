@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: arrayindex-website
+    env: docker
+    dockerContext: .
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: VITE_EMAILJS_PUBLIC_KEY
+        value: iSa7hM9dsxKoq8jYg
+    healthCheckPath: /
+    autoDeploy: true
+    disk:
+      name: data
+      mountPath: /app/data
+      sizeGB: 1 
