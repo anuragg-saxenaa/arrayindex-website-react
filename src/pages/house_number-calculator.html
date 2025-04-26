@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Number Sum</title>
+  <link rel="stylesheet" href="assets/css/housenum.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header--logo">
+      <img src="assets/img/logo.png" alt="ArrayIndex">
+      <p>arrayIndex</p>
+    </div>
+    <h1 style="animation-duration: 3s;">House Number Sum</h1>
+    <div class="how-to-use">
+      <p>
+        Welcome to the House Number Sum calculator! This tool helps you find the single-digit sum of a house number.
+        Enter the house number below and the result will be calculated automatically.
+      </p>
+      <p>
+        Example: If you enter the house number "1234", the sum of its digits will be calculated as "1 + 2 + 3 + 4 = 10"
+        and then "1 + 0 = 1".
+      </p>
+      <strong>How to Use:</strong> Enter a house number and the result will be displayed automatically.
+    </div>
+    <form id="houseNumberForm">
+      <label for="houseNumber">Enter House Number:</label>
+      <input type="text" id="houseNumber" name="houseNumber" required maxlength="20">
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const charToValue = {
+      'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 8, 'g': 3, 'h': 5, 'i': 1,
+      'j': 1, 'k': 2, 'l': 3, 'm': 4, 'n': 5, 'o': 7, 'p': 8, 'q': 1, 'r': 2,
+      's': 3, 't': 4, 'u': 6, 'v': 6, 'w': 6, 'x': 5, 'y': 1, 'z': 7
+    };
+
+    function getSingleDigitSum(houseNumber) {
+      let sum = 0;
+
+      for (let i = 0; i < houseNumber.length; i++) {
+        const char = houseNumber[i].toLowerCase();
+        if (char === ' ') continue; // Skip spaces
+        const digitValue = charToValue[char] !== undefined ? charToValue[char] : (!isNaN(char) ? parseInt(char) : 0);
+        sum += digitValue;
+      }
+
+      while (sum > 9) {
+        let newSum = 0;
+        while (sum > 0) {
+          newSum += sum % 10;
+          sum = Math.floor(sum / 10);
+        }
+        sum = newSum;
+      }
+
+      return sum;
+    }
+
+    const houseNumberInput = document.getElementById('houseNumber');
+    const resultDiv = document.getElementById('result');
+
+    houseNumberInput.addEventListener('input', () => {
+      const houseNumber = houseNumberInput.value;
+      const singleDigitSum = getSingleDigitSum(houseNumber);
+      resultDiv.textContent = `Single-Digit Sum: ${singleDigitSum}`;
+    });
+  </script>
+</body>
+
+</html>

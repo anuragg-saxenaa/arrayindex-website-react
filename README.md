@@ -12,6 +12,7 @@ A modern, responsive website for ArrayIndex built with React, TypeScript, and Ta
 - 📧 Contact form integration
 - 🗺️ Interactive map integration
 - 🎯 SEO optimized
+- 🔐 Secure admin authentication
 
 ## Tech Stack
 
@@ -66,6 +67,17 @@ A modern, responsive website for ArrayIndex built with React, TypeScript, and Ta
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+### Environment Variables
+
+Create a `.env` file in the root directory with the following variables for admin authentication:
+
+```
+VITE_ADMIN_EMAIL=your-admin-email@example.com
+VITE_ADMIN_PASSWORD=your-secure-password
+```
+
+For production deployment on Render, set these as environment variables in your Render dashboard.
+
 ## Deployment
 
 ### Docker Deployment on Render
@@ -89,6 +101,7 @@ The application is configured to run in a Docker container with:
 arrayindex-website-react/
 ├── src/
 │   ├── components/     # Reusable UI components
+│   ├── context/       # Context providers (authentication, etc.)
 │   ├── pages/         # Page components
 │   ├── services/      # API and service integrations
 │   ├── styles/        # Global styles and Tailwind config
@@ -102,6 +115,26 @@ arrayindex-website-react/
 ├── Dockerfile         # Docker configuration
 └── render.yaml        # Render deployment configuration
 ```
+
+## Admin Authentication
+
+### Overview
+The website includes a secure admin panel that requires authentication. The admin credentials are configurable via environment variables for enhanced security.
+
+### Accessing Admin Features
+- Admin Login: `/admin/login`
+- Admin Dashboard: `/admin` (requires authentication)
+
+### Configuration
+Set the following environment variables to configure admin access:
+- `VITE_ADMIN_EMAIL`: Admin login email
+- `VITE_ADMIN_PASSWORD`: Admin login password
+
+### Security Notes
+- Never hardcode admin credentials in your code
+- Change default credentials immediately in production
+- Use strong, unique passwords
+- Consider implementing additional security measures like rate limiting in production
 
 ## Features in Detail
 
