@@ -9,8 +9,12 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-# Copy source code
+# Copy source code and public assets
 COPY . .
+
+# Make sure the public directory and its contents are properly accessible
+RUN mkdir -p /app/public/img
+RUN cp -r /app/public/assets/img/* /app/public/img/ || true
 
 # Set default environment variables with fallback values
 ENV VITE_ADMIN_EMAIL=${VITE_ADMIN_EMAIL}

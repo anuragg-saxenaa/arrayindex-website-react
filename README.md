@@ -13,6 +13,8 @@ A modern, responsive website for ArrayIndex built with React, TypeScript, and Ta
 - 🗺️ Interactive map integration
 - 🎯 SEO optimized
 - 🔐 Secure admin authentication
+- 🧾 Admin Invoice Generator (PDF, CSV, HTML export)
+- 🐳 Docker & Render deployment ready
 
 ## Tech Stack
 
@@ -78,6 +80,25 @@ VITE_ADMIN_PASSWORD=your-secure-password
 
 For production deployment on Render, set these as environment variables in your Render dashboard.
 
+**Default Credentials (for local/dev):**
+- Email: `admin@arrayindex.com`
+- Password: `admin123`
+
+> ⚠️ Change these credentials in production for security.
+
+## Invoice Generator (Admin Only)
+
+- Access via the admin dashboard after logging in
+- Generate invoices with hours, rates, HST (13%)
+- Export as PDF, CSV, or HTML
+- Works in all environments (including Docker)
+
+## Static Asset Handling in Docker
+
+- All static assets (including logo) are now reliably served in Docker and production
+- If you add new images, place them in `public/assets/img` and (if needed) also in `public/img` for direct access
+- The Express server is configured to serve both `/dist` and `/public` folders
+
 ## Deployment
 
 ### Docker Deployment on Render
@@ -91,7 +112,7 @@ For production deployment on Render, set these as environment variables in your 
 The application is configured to run in a Docker container with:
 - Multi-stage build for optimized image size
 - Production-ready Express server
-- Static file serving
+- Static file serving from `/dist` and `/public`
 - Proper error handling
 - Health checks
 
