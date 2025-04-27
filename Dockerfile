@@ -12,6 +12,10 @@ RUN npm install
 # Copy source code
 COPY . .
 
+# Set default environment variables with fallback values
+ENV VITE_ADMIN_EMAIL=${VITE_ADMIN_EMAIL}
+ENV VITE_ADMIN_PASSWORD=${VITE_ADMIN_PASSWORD}
+
 # Build the app
 RUN npm run build
 

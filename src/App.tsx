@@ -8,6 +8,7 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import AdminLogin from './pages/AdminLogin'
 import AdminDashboard from './pages/AdminDashboard'
+import InvoiceGenerator from './pages/InvoiceGenerator'
 import Navbar from './components/Navbar'
 import { AdminAuthProvider } from './context/AdminAuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
@@ -34,6 +35,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <AdminDashboard />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/admin/invoice" 
+              element={
+                <ProtectedRoute>
+                  <InvoiceGenerator />
                 </ProtectedRoute>
               } 
             />

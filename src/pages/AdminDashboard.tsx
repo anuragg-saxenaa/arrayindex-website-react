@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAdminAuth } from '../context/AdminAuthContext';
 
 const AdminDashboard: React.FC = () => {
@@ -77,6 +77,15 @@ const AdminDashboard: React.FC = () => {
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
             <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
             <div className="space-y-3">
+              <Link 
+                to="/admin/invoice" 
+                className="block w-full bg-white/10 hover:bg-white/20 rounded-lg px-4 py-3 text-left transition-colors"
+              >
+                <div className="flex items-center">
+                  <span className="flex-1">Generate Invoice</span>
+                  <span className="bg-primary-color/20 text-primary-color text-xs px-2 py-1 rounded-full">New</span>
+                </div>
+              </Link>
               <button className="w-full bg-white/10 hover:bg-white/20 rounded-lg px-4 py-3 text-left transition-colors">
                 Update Website Content
               </button>

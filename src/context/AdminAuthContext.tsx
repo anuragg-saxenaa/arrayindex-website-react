@@ -2,8 +2,8 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 // Get admin credentials from environment variables with fallbacks for development
 const ADMIN_CREDENTIALS = {
-  email: import.meta.env.VITE_ADMIN_EMAIL || 'admin@example.com',
-  password: import.meta.env.VITE_ADMIN_PASSWORD || 'changeme'
+  email: import.meta.env.VITE_ADMIN_EMAIL || 'admin@arrayindex.com',
+  password: import.meta.env.VITE_ADMIN_PASSWORD || 'admin123'
 };
 
 interface AdminAuthContextType {

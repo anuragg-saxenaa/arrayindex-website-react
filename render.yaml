@@ -10,9 +10,9 @@ services:
       - key: VITE_EMAILJS_PUBLIC_KEY
         value: iSa7hM9dsxKoq8jYg
       - key: VITE_ADMIN_EMAIL
-        sync: false # You'll set this in the Render dashboard
+        value: admin@arrayindex.com
       - key: VITE_ADMIN_PASSWORD
-        sync: false # You'll set this in the Render dashboard
+        value: admin123
     healthCheckPath: /
     autoDeploy: true
     disk:
